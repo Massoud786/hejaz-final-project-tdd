@@ -19,6 +19,7 @@ import tdd.finalProject.utilities.SeleniumUtilities;
     public SignUpPage signUpPage;
     public LoginPage loginPage;
     public UserProfilePage userProfilePage;
+    public PlanPage planPage;
         @BeforeMethod
         public void initiateTestMethod(){
             super.openBrowser();
@@ -27,6 +28,7 @@ import tdd.finalProject.utilities.SeleniumUtilities;
             signUpPage = new SignUpPage();
             loginPage = new LoginPage();
             userProfilePage = new UserProfilePage();
+            planPage = new PlanPage();
 
         }
         @AfterMethod
