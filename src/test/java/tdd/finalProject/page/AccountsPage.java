@@ -7,19 +7,18 @@ import tdd.finalProject.utilities.SeleniumUtilities;
 
 import java.util.List;
 
-public class AccountPage extends SeleniumUtilities {
-    public AccountPage(){
+public class AccountsPage extends SeleniumUtilities {
+    public AccountsPage(){
         PageFactory.initElements(getDriver(),this);
     }
-
     public int countRecordPageTen(){
-        return recordPageTen.size();
+        return pageTenRecord.size();
     }
     public int countRecordPageTwentyFive(){
-        return recordPageTwentyFive.size();
+        return pageTwentyFiveRecord.size();
     }
     public int countRecordPageFifty(){
-        return recordPageFifty.size();
+        return pageFiftyRecord.size();
     }
     @FindBy(xpath = "/html/body/div[1]/div/div[2]/div/div/a[1]")
     public WebElement accountBtn;
@@ -27,14 +26,17 @@ public class AccountPage extends SeleniumUtilities {
     public WebElement page5Row;
     @FindBy(xpath = "/html/body/div[1]/div/div[3]/div/div/div/div[2]/div/div/div[3]/select")
     public WebElement pageTen;
-    @FindBy(xpath = "//tr[@class='css-0']")
-    public List<WebElement> recordPageTen;
+    @FindBy(xpath = "//tbody[@class='css-0']/tr")
+    public List<WebElement> pageTenRecord;
     @FindBy(xpath = "/html/body/div[1]/div/div[3]/div/div/div/div[2]/div/div/div[3]/select")
     public WebElement page25;
-    @FindBy(xpath = "//tr[@class='css-0']")
-    public List<WebElement> recordPageTwentyFive;
+    @FindBy(xpath = "//tbody[@class='css-0']/tr")
+    public List<WebElement> pageTwentyFiveRecord;
     @FindBy(xpath = "/html/body/div[1]/div/div[3]/div/div/div/div[2]/div/div/div[3]/select")
     public WebElement pageFifty;
-    @FindBy(xpath = "//tr[@class='css-0']")
-    public List<WebElement> recordPageFifty;
+    @FindBy(xpath = "//tbody[@class='css-0']/tr")
+    public List<WebElement> pageFiftyRecord;
+
+
+
 }
