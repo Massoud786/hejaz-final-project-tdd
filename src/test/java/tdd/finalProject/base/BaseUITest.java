@@ -9,19 +9,27 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
+import tdd.finalProject.page.CreateAccountPage;
 import tdd.finalProject.page.HomePage;
+import tdd.finalProject.page.SignUpPage;
 import tdd.finalProject.utilities.SeleniumUtilities;
 
 @Listeners({ExtentITestListenerAdapter.class})
     public class BaseUITest extends SeleniumUtilities {
-        public HomePage homePage;
+    public HomePage homePage;
+    public CreateAccountPage createAccountPage;
+    public SignUpPage signUpPage;
         @BeforeMethod
         public void initiateTestMethod(){
             super.openBrowser();
             homePage = new HomePage();
+            createAccountPage = new CreateAccountPage();
+            signUpPage = new SignUpPage();
+
         }
         @AfterMethod
-        public void entTestMethod(ITestResult result)  {
+        public void entTestMethod(ITestResult result) throws InterruptedException {
+            Thread.sleep(6000);
             if(result.getStatus()==ITestResult.FAILURE){
                 TakesScreenshot takesScreenshot = (TakesScreenshot) getDriver();
                 String screenShot = takesScreenshot.getScreenshotAs(OutputType.BASE64);
