@@ -35,10 +35,6 @@ public class SeleniumUtilities extends BaseSetup {
         LOGGER.info("Checking element is displayed {}", element);
         return waitForVisibility(element).isDisplayed();
     }
-    public boolean isElementEnabled(WebElement element){
-        LOGGER.info("Check element is enabled "+ element);
-        return waitForVisibility(element).isEnabled();
-    }
     public String getElementText(WebElement element){
         LOGGER.info("Getting Element Text" + element);
         return waitForVisibility(element).getText();
