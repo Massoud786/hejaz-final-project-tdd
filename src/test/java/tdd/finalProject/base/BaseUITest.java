@@ -11,6 +11,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import tdd.finalProject.page.CreateAccountPage;
 import tdd.finalProject.page.HomePage;
+import tdd.finalProject.page.LoginPage;
 import tdd.finalProject.page.SignUpPage;
 import tdd.finalProject.utilities.SeleniumUtilities;
 
@@ -19,12 +20,15 @@ import tdd.finalProject.utilities.SeleniumUtilities;
     public HomePage homePage;
     public CreateAccountPage createAccountPage;
     public SignUpPage signUpPage;
+    public LoginPage loginPage;
         @BeforeMethod
         public void initiateTestMethod(){
             super.openBrowser();
             homePage = new HomePage();
             createAccountPage = new CreateAccountPage();
             signUpPage = new SignUpPage();
+            loginPage = new LoginPage();
+
 
         }
         @AfterMethod
