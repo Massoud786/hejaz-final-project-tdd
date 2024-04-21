@@ -9,10 +9,7 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
-import tdd.finalProject.page.CreateAccountPage;
-import tdd.finalProject.page.HomePage;
-import tdd.finalProject.page.LoginPage;
-import tdd.finalProject.page.SignUpPage;
+import tdd.finalProject.page.*;
 import tdd.finalProject.utilities.SeleniumUtilities;
 
 @Listeners({ExtentITestListenerAdapter.class})
@@ -21,6 +18,7 @@ import tdd.finalProject.utilities.SeleniumUtilities;
     public CreateAccountPage createAccountPage;
     public SignUpPage signUpPage;
     public LoginPage loginPage;
+    public UserProfilePage userProfilePage;
         @BeforeMethod
         public void initiateTestMethod(){
             super.openBrowser();
@@ -28,7 +26,7 @@ import tdd.finalProject.utilities.SeleniumUtilities;
             createAccountPage = new CreateAccountPage();
             signUpPage = new SignUpPage();
             loginPage = new LoginPage();
-
+            userProfilePage = new UserProfilePage();
 
         }
         @AfterMethod
