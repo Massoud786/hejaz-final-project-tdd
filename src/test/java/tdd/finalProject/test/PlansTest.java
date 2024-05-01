@@ -1,9 +1,8 @@
 package tdd.finalProject.test;
-
-import org.openqa.selenium.Dimension;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import tdd.finalProject.base.BaseUITest;
+import tdd.finalProject.utilities.DateGenerator;
 
 public class PlansTest  extends BaseUITest {
     @Test
@@ -36,12 +35,12 @@ public class PlansTest  extends BaseUITest {
         clickOnElement(planPage.planBtn);
 
         String actualCreationDate = getElementText(planPage.creationDate);
-        String expectedCreationDate = "April 21, 2024";
+        String expectedCreationDate = DateGenerator.getCurrentDate();
         Assert.assertEquals(actualCreationDate, expectedCreationDate,
                 "Expected creation date should match actual creation date");
 
         String actualExpirationDate = getElementText(planPage.expirationDate);
-        String expectedExpirationDate = "April 22, 2024";
+        String expectedExpirationDate = DateGenerator.getADayAfterCurrentDate();
         Assert.assertEquals(actualExpirationDate, expectedExpirationDate,
                 "Expected expiration date should match actual expiration date");
     }
