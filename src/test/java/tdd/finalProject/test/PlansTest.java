@@ -35,7 +35,7 @@ public class PlansTest  extends BaseUITest {
         clickOnElement(planPage.planBtn);
 
         String actualCreationDate = getElementText(planPage.creationDate);
-        String expectedCreationDate = "May 03, 2024";
+        String expectedCreationDate = "May 2, 2024";
         Assert.assertEquals(expectedCreationDate,actualCreationDate);
 
 
