@@ -8,7 +8,7 @@ import java.util.Date;
 public class DateGenerator {
     public static String getCurrentDate(){
         Date currentDate = new Date();
-        SimpleDateFormat format = new SimpleDateFormat("MMMM dd, yyyy");
+        SimpleDateFormat format = new SimpleDateFormat("MMMM d, yyyy");
         String formattedDate = format.format(currentDate);
         return formattedDate;
 

@@ -35,13 +35,13 @@ public class PlansTest  extends BaseUITest {
         clickOnElement(planPage.planBtn);
 
         String actualCreationDate = getElementText(planPage.creationDate);
-        String expectedCreationDate = "May 2, 2024";
-        Assert.assertEquals(expectedCreationDate,actualCreationDate);
-
+        String expectedCreationDate = DateGenerator.getCurrentDate();
+        Assert.assertEquals(actualCreationDate, expectedCreationDate,
+                "Expected creation date should match actual creation date");
 
         String actualExpirationDate = getElementText(planPage.expirationDate);
-        String expectedExpirationDate = "May 3, 2024";
-        Assert.assertEquals(expectedExpirationDate,actualExpirationDate);
-
+        String expectedExpirationDate = DateGenerator.getADayAfterCurrentDate();
+        Assert.assertEquals(actualExpirationDate, expectedExpirationDate,
+                "Expected expiration date should match actual expiration date");
     }
 }
