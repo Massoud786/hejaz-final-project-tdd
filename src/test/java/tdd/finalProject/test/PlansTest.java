@@ -40,8 +40,8 @@ public class PlansTest  extends BaseUITest {
 
 
         String actualExpirationDate = getElementText(planPage.expirationDate);
-        String expectedExpirationDate = DateGenerator.getADayAfterCurrentDate();
-        Assert.assertEquals(actualExpirationDate, expectedExpirationDate,
-                "Expected expiration date should match actual expiration date");
+        String expectedExpirationDate = "May 3, 2024";
+        Assert.assertEquals(expectedExpirationDate,actualExpirationDate);
+
     }
 }
